@@ -1,260 +1,311 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>我的书签</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+**导航**
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            background: #f5f7fa;
-            padding: 2rem;
-        }
+综合		https://www.fre321.com/
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+出海		https://ccbaohe.com/
 
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+数据		http://hao.199it.com/
 
-        .header h1 {
-            color: #2d3748;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+搜图		https://www.91sotu.com/
 
-        .search-box {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            padding: 1rem;
-        }
+学术		https://www.sssam.com/
 
-        .search-box input {
-            width: 100%;
-            padding: 0.8rem 1.2rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
+小众		https://www.xiaozhongjishu.com/
 
-        .search-box input:focus {
-            outline: none;
-            border-color: #4299e1;
-            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-        }
+宝藏		https://baozangdh.com/
 
-        .bookmark-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
 
-        .bookmark-category {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
-        }
 
-        .bookmark-category:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08);
-        }
+**智助**
 
-        .category-title {
-            color: #2d3748;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
+Kimi			https://kimi.moonshot.cn/
 
-        .bookmark-list {
-            list-style: none;
-        }
+GPT			https://chatgpt.com/
 
-        .bookmark-item {
-            margin-bottom: 0.8rem;
-        }
+Claude		https://claude.ai/
 
-        .bookmark-link {
-            display: flex;
-            align-items: center;
-            color: #4a5568;
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: all 0.2s;
-        }
+Gemini		[https://gemini.google.com/](https://gemini.google.com/app)
 
-        .bookmark-link:hover {
-            background: #f7fafc;
-            color: #2b6cb0;
-        }
+通义千问		https://tongyi.aliyun.com/
 
-        .bookmark-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 0.8rem;
-        }
+图像生成		https://flux.urldq.com/
 
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
+AI去背景		[https://html.zone/](https://html.zone/background-remover)
 
-            .header h1 {
-                font-size: 2rem;
-            }
 
-            .bookmark-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>我的书签收藏</h1>
-            <div class="search-box">
-                <input type="text" placeholder="搜索书签..." id="searchInput">
-            </div>
-        </header>
 
-        <div class="bookmark-grid">
-            <!-- 常用工具 -->
-            <div class="bookmark-category">
-                <h2 class="category-title">常用工具</h2>
-                <ul class="bookmark-list">
-                    <li class="bookmark-item">
-                        <a href="https://www.google.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Google" class="bookmark-icon">
-                            <span>Google</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://translate.google.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Google Translate" class="bookmark-icon">
-                            <span>Google 翻译</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://maps.google.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Google Maps" class="bookmark-icon">
-                            <span>Google 地图</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+**外网**
 
-            <!-- 学习资源 -->
-            <div class="bookmark-category">
-                <h2 class="category-title">学习资源</h2>
-                <ul class="bookmark-list">
-                    <li class="bookmark-item">
-                        <a href="https://github.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="GitHub" class="bookmark-icon">
-                            <span>GitHub</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://stackoverflow.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Stack Overflow" class="bookmark-icon">
-                            <span>Stack Overflow</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://medium.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Medium" class="bookmark-icon">
-                            <span>Medium</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+Gmail		https://mail.google.com/
 
-            <!-- 娱乐休闲 -->
-            <div class="bookmark-category">
-                <h2 class="category-title">娱乐休闲</h2>
-                <ul class="bookmark-list">
-                    <li class="bookmark-item">
-                        <a href="https://www.youtube.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="YouTube" class="bookmark-icon">
-                            <span>YouTube</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://www.netflix.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Netflix" class="bookmark-icon">
-                            <span>Netflix</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://www.spotify.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Spotify" class="bookmark-icon">
-                            <span>Spotify</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+Twitter		https://x.com/home
 
-            <!-- 新闻资讯 -->
-            <div class="bookmark-category">
-                <h2 class="category-title">新闻资讯</h2>
-                <ul class="bookmark-list">
-                    <li class="bookmark-item">
-                        <a href="https://news.google.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Google News" class="bookmark-icon">
-                            <span>Google 新闻</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://www.bbc.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="BBC" class="bookmark-icon">
-                            <span>BBC News</span>
-                        </a>
-                    </li>
-                    <li class="bookmark-item">
-                        <a href="https://www.reuters.com" class="bookmark-link">
-                            <img src="/api/placeholder/16/16" alt="Reuters" class="bookmark-icon">
-                            <span>Reuters</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+Telegram		https://web.telegram.org/a/
 
-    <script>
-        // 搜索功能实现
-        const searchInput = document.getElementById('searchInput');
-        const bookmarkItems = document.querySelectorAll('.bookmark-item');
+YouTube		https://www.youtube.com
 
-        searchInput.addEventListener('input', function(e) {
-            const searchText = e.target.value.toLowerCase();
-            
-            bookmarkItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchText)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+身份大全		https://shenfendaquan.com/
+
+美国地址		https://www.meiguodizhi.com/
+
+优选IP		[https://stock.hostmonit.com/](https://stock.hostmonit.com/CloudFlareYes)
+
+订阅转换		https://sub.ops.ci/
+
+节点转换		[https://v2rayse.com/](https://v2rayse.com/node-convert/)
+
+机场推荐		https://ygpy.net/
+
+IP检测		https://ip125.com/
+
+IP指纹		https://whoer.net/
+
+测速			https://speed.cloudflare.com/
+
+
+
+**接码**
+
+https://freephonenum.com
+
+https://quackr.io
+
+https://smstome.com
+
+https://receive-smss.com
+
+https://temporary-phone-number.com
+
+https://temp-number.com
+
+https://mytempsms.com
+
+https://receive-sms-free.cc
+
+**节点**
+
+https://v2rayse.com/
+
+[https://v2cross.com/](https://v2cross.com/1884.html)
+
+https://proxypool.link/
+
+https://www.cfmem.com/
+
+https://www.mibei77.com/
+
+[https://godfather.github.io/](https://godfather216.github.io/godfather.github.io/)
+
+https://ircfspace.github.io/location/
+
+
+
+**编程**
+
+阿里云		https://www.aliyun.com/
+
+Maven		https://mvnrepository.com/
+
+微软学习		[https://learn.microsoft.com/](https://learn.microsoft.com/zh-cn/)
+
+菜鸟教程		https://www.runoob.com/
+
+W3School		https://www.w3school.com.cn/
+
+前端			https://uilibhub.com/zh
+
+正则			[https://jex.im/regulex/](https://jex.im/regulex/#!flags=&re=^(a|b)*%3F%24)
+
+ES6教程		[https://es6.ruanyifeng.com/](https://es6.ruanyifeng.com/#docs/proposals)
+
+ElementUI		[https://element.eleme.cn/](https://element.eleme.cn/#/zh-CN/)
+
+LayUI		[https://layui.dev/](https://layui.dev/docs/2/index.html)
+
+Java			[https://docs.oracle.com/](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
+
+开源中国		[https://www.oschina.net/](https://www.oschina.net/project)
+
+博客园		https://www.cnblogs.com/
+
+Gitee			https://gitee.com/
+
+GitHub		https://github.com/
+
+Replit		[https://replit.com/](https://replit.com/~)
+
+API			https://api.vvhan.com/
+
+Cloudflare		https://dash.cloudflare.com/
+
+Cloudns		https://www.cloudns.net/
+
+Infinityfree		https://dash.infinityfree.com/
+
+Dynv6		https://dynv6.com/
+
+SSL证书		https://cao.la/
+
+
+
+**设计**
+
+配色		[https://www.toptal.com/](https://www.toptal.com/designers/colourcode)
+
+配色		https://mycolor.space/
+
+配色		[https://www.toolnb.com/](https://www.toolnb.com/tools/color.html?t=5)
+
+配色		https://uigradients.com/
+
+字体		[https://www.maoken.com/](https://www.maoken.com/freefonts)
+
+字体		https://wangchujiang.com/free-font/
+
+可画		https://www.canva.cn/
+
+矢量图	https://www.iconfont.cn/
+
+Logo		[https://www.designevo.com/](https://www.designevo.com/logo-maker/)
+
+图标		https://www.mingcute.com/
+
+
+
+**素材**
+
+爱给网		https://www.aigei.com/
+
+找台词		https://zhaotaici.cn/
+
+AE素材		https://www.lookae.com/
+
+优品PPT		https://www.ypppt.com/
+
+Excel公式		https://www.lanrenexcel.com/
+
+文案营销		https://socialbeta.com/
+
+论文阅读		[https://readpaper.com/](https://readpaper.com/new)
+
+范文先生		https://www.fwsir.com/
+
+过期杂志		https://www.fx361.com/
+
+数英网		https://www.digitaling.com/
+
+梅花网		http://www.meihua.info/
+
+前瞻网		[https://www.qianzhan.com/](https://www.qianzhan.com/analyst/)
+
+艾瑞咨询		https://www.iresearch.com.cn/
+
+比达网		http://www.bigdata-research.cn/
+
+音效网		https://www.yisell.com/
+
+即能创新		https://runwise.co/
+
+发现报告		https://www.fxbaogao.com/
+
+Z-lib电子书	[https://zh.go-to-library.sk/](https://zh.go-to-library.sk/#useful_link_tab)
+
+电脑壁纸		[https://tool.liumingye.cn/wallpaper/](https://tool.liumingye.cn/wallpaper/?)
+
+极简壁纸		https://bz.zzzmh.cn/index
+
+壁纸汇		https://www.bizhihui.com/
+
+拾光壁纸		https://snake.timeline.ink/random
+
+
+
+**在线**
+
+语雀文档		https://www.yuque.com/
+
+思维导图		https://www.processon.com/
+
+文件传输		https://www.wenshushu.cn/
+
+文件转换		https://convertio.co/zh/
+
+文件中转		https://4275.com/
+
+草料二维码		https://cli.im/
+
+文本转语音		https://tts.femoon.top/cn
+
+免费图床		https://111666.best/
+
+综合工具		https://www.toolnb.com/
+
+视频下载		https://vtool.pro/
+
+视频下载		https://cobalt.tools/
+
+短链生成		https://www.shorturl.at/
+
+临时邮箱		https://inboxes.com/
+
+在线音乐		[https://tool.liumingye.cn/music/](https://tool.liumingye.cn/music/#/)
+
+图文排版		https://www.5ce.com/
+
+在线OCR		[https://catocr.com/](https://catocr.com/#/)
+
+SEO查询		https://seo.chinaz.com/
+
+熊猫字幕		[https://www.pdsub.com/](https://www.pdsub.com/create)
+
+提词器		https://flowprompter.app/
+
+公式识别		https://www.latexlive.com/
+
+公式识别		[https://simpletex.net/](https://simpletex.net/ai/latex_ocr)
+
+文本转存		https://igdux.top/
+
+文本转存		https://shz.al/
+
+RSS订阅		[https://www.qireader.com/](https://www.qireader.com/subscriptions)
+
+热搜榜单		[https://rebang.today/](https://rebang.today/following)
+
+听播客		https://podtail.com/podcast/
+
+
+
+**其它**
+
+电视软件	https://www.iptvkk.com/livetv/
+
+冥想音乐		https://freemind.fit/
+
+小刀娱乐网		https://www.x6g.com/
+
+气候地图		[https://zoom.earth/maps/](https://zoom.earth/maps/precipitation/#view=47.606,-122.359,6z/model=icon)
+
+网页聚合		https://www.link3.cc/sublime
+
+小麦公考		https://www.xiaomaigongkao.com/
+
+学宝教育		https://www.chinagwy.org/
+
+中学常识		http://www.1010jiajiao.com/
+
+中华典藏书		https://www.zhonghuadiancang.com/
+
+IPTV直播源		[http://tonkiang.us/](http://tonkiang.us/?)
+
+体育直播		http://www.qiumi1314.com/
+
+激活系统		https://kms.cx/
+
+小霸王		https://www.yikm.net/
+
+电子印章		[https://xxss0903.github.io/](https://xxss0903.github.io/drawstamputils/)
+
+电子印章		https://vtool.pro/seal/index.html
+
+网络剪贴板		https://ykjtb.com/
