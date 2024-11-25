@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的书签</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            padding: 1rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+
+        .bookmark-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bookmark-category {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .bookmark-category:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-title {
+            color: #2d3748;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .bookmark-list {
+            list-style: none;
+        }
+
+        .bookmark-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .bookmark-link {
+            display: flex;
+            align-items: center;
+            color: #4a5568;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .bookmark-link:hover {
+            background: #f7fafc;
+            color: #2b6cb0;
+        }
+
+        .bookmark-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .bookmark-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>我的书签收藏</h1>
+            <div class="search-box">
+                <input type="text" placeholder="搜索书签..." id="searchInput">
+            </div>
+        </header>
+
+        <div class="bookmark-grid">
+            <!-- 常用工具 -->
+            <div class="bookmark-category">
+                <h2 class="category-title">常用工具</h2>
+                <ul class="bookmark-list">
+                    <li class="bookmark-item">
+                        <a href="https://www.google.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Google" class="bookmark-icon">
+                            <span>Google</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://translate.google.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Google Translate" class="bookmark-icon">
+                            <span>Google 翻译</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://maps.google.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Google Maps" class="bookmark-icon">
+                            <span>Google 地图</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 学习资源 -->
+            <div class="bookmark-category">
+                <h2 class="category-title">学习资源</h2>
+                <ul class="bookmark-list">
+                    <li class="bookmark-item">
+                        <a href="https://github.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="GitHub" class="bookmark-icon">
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://stackoverflow.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Stack Overflow" class="bookmark-icon">
+                            <span>Stack Overflow</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://medium.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Medium" class="bookmark-icon">
+                            <span>Medium</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 娱乐休闲 -->
+            <div class="bookmark-category">
+                <h2 class="category-title">娱乐休闲</h2>
+                <ul class="bookmark-list">
+                    <li class="bookmark-item">
+                        <a href="https://www.youtube.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="YouTube" class="bookmark-icon">
+                            <span>YouTube</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://www.netflix.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Netflix" class="bookmark-icon">
+                            <span>Netflix</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://www.spotify.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Spotify" class="bookmark-icon">
+                            <span>Spotify</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 新闻资讯 -->
+            <div class="bookmark-category">
+                <h2 class="category-title">新闻资讯</h2>
+                <ul class="bookmark-list">
+                    <li class="bookmark-item">
+                        <a href="https://news.google.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Google News" class="bookmark-icon">
+                            <span>Google 新闻</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://www.bbc.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="BBC" class="bookmark-icon">
+                            <span>BBC News</span>
+                        </a>
+                    </li>
+                    <li class="bookmark-item">
+                        <a href="https://www.reuters.com" class="bookmark-link">
+                            <img src="/api/placeholder/16/16" alt="Reuters" class="bookmark-icon">
+                            <span>Reuters</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 搜索功能实现
+        const searchInput = document.getElementById('searchInput');
+        const bookmarkItems = document.querySelectorAll('.bookmark-item');
+
+        searchInput.addEventListener('input', function(e) {
+            const searchText = e.target.value.toLowerCase();
+            
+            bookmarkItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchText)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
