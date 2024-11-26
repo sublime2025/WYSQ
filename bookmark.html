@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .bookmark-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .bookmark-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .bookmark-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .bookmark-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .bookmark-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .bookmark-title {
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .bookmark-item:hover .bookmark-title {
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="bookmark-container">
+        <div class="category">
+            <h2 class="category-title">常用</h2>
+            <div class="bookmark-grid">
+                <a href="https://www.google.com" class="bookmark-item">
+                    
+                    <span class="bookmark-title">Google</span>
+                </a>
+                <a href="https://github.com" class="bookmark-item">
+                    <span class="bookmark-title">GitHub</span>
+                </a>
+                <a href="https://youtube.com" class="bookmark-item">
+                    <span class="bookmark-title">YouTube</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">导航</h2>
+            <div class="bookmark-grid">
+                <a href="https://www.fre321.com/" class="bookmark-item">
+                    <span class="bookmark-title">综合</span>
+                </a>
+                <a href="https://ccbaohe.com/" class="bookmark-item">
+                    <span class="bookmark-title">出海</span>
+                </a>
+                <a href="http://hao.199it.com/" class="bookmark-item">
+                    <span class="bookmark-title">数据</span>
+                </a>
+                <a href="https://www.91sotu.com/" class="bookmark-item">
+                    <span class="bookmark-title">搜图</span>
+                </a>
+                <a href="https://www.sssam.com/" class="bookmark-item">
+                    <span class="bookmark-title">学术</span>
+                </a>
+                <a href="https://www.xiaozhongjishu.com/" class="bookmark-item">
+                    <span class="bookmark-title">小众</span>
+                </a>
+                <a href="https://baozangdh.com/" class="bookmark-item">
+                    <span class="bookmark-title">宝藏</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">智助</h2>
+            <div class="bookmark-grid">
+                <a href="https://kimi.moonshot.cn/" class="bookmark-item">
+                    <span class="bookmark-title">Kimi</span>
+                </a>
+                <a href="https://chatgpt.com/" class="bookmark-item">
+                    <span class="bookmark-title">GPT</span>
+                </a>
+                <a href="https://claude.ai/" class="bookmark-item">
+                    <span class="bookmark-title">Claude</span>
+                </a>
+                <a href="https://gemini.google.com/" class="bookmark-item">
+                    <span class="bookmark-title">Gemini</span>
+                </a>
+                <a href="https://tongyi.aliyun.com/" class="bookmark-item">
+                    <span class="bookmark-title">通义千问</span>
+                </a>
+                <a href="https://flux.urldq.com/" class="bookmark-item">
+                    <span class="bookmark-title">图像生成</span>
+                </a>
+                <a href="https://html.zone/" class="bookmark-item">
+                    <span class="bookmark-title">AI去背景</span>
+                </a>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</body>
+</html>
