@@ -123,6 +123,7 @@
             padding: 20px 0;
             border-right: 1px solid #dee2e6;
             position: fixed;
+            text-align: center;
             height: calc(100vh - 135px);
             overflow-y: auto;
         }
@@ -201,6 +202,7 @@
             border-left: 1px solid #dee2e6;
             position: fixed;
             height: calc(100vh - 135px);
+            text-align: center;
             overflow-y: auto;
             right: 0;
             top: 135px;
@@ -249,7 +251,7 @@
             <div class="search-option" data-engine="bing">必应</div>
         </div>
         <div class="search-box">
-            <input type="text" class="search-input" id="searchInput" placeholder="搜索网站...">
+            <input type="text" class="search-input" id="searchInput" placeholder="按回车键搜索网页内容...">
         </div>
     </div>
 
@@ -320,13 +322,16 @@
 
         // 修改右侧导航数据结构，添加URL
         const rightNavigationData = [
+            { name: "Bilibli", url: "https://www.bilibili.com" },
+            { name: "Douyin", url: "https://www.douyin.com" },
+            { name: "YouTube", url: "https://www.youtube.com" },
+            { name: "Rebang", url: "https://rebang.today" }, 
+            { name: "QiReader", url: "https://www.qireader.com" },
             { name: "YouTube", url: "https://www.youtube.com" },
             { name: "Telegram", url: "https://web.telegram.org/a" },
             { name: "Twitter", url: "https://x.com/home" },
-            { name: "GitHub", url: "https://github.com" }, 
-            { name: "Rebang", url: "https://rebang.today" }, 
-            { name: "QiReader", url: "https://www.qireader.com" },
-            { name: "Follow", url: "https://app.follow.is/feeds/all/pending?view=0" },  
+            { name: "GitHub", url: "https://github.com" },             
+            { name: "Follow", url: "https://app.follow.is/feeds/all/pending?view=0" },
             { name: "Translate", url: "https://translate.google.com/?hl=zh-CN&sl=en&tl=zh-CN&op=translate" }, 
             { name: "ScreenSaver", url: "https://www.screensaver.top/zh/detail/star" }, 
         ];
@@ -357,7 +362,7 @@
                         { name: "Kimi", url: "https://kimi.moonshot.cn/", description: "月之暗面出品，国内最佳智能助手" }, 
                         { name: "ChatGPT", url: "https://chatgpt.com/", description: "OpenAI出品，国外人工智能前沿助手" },
                         { name: "Claude", url: "https://claude.ai/", description: "Anthropic出品，在代码处理方面更优秀" }, 
-                        { name: "Gemini", url: "https://gemini.google.com/", description: "谷歌出品，在搜索方面更优秀" },                         
+                        { name: "Gemini", url: "https://gemini.google.com/", description: "谷歌出品，在搜索方面更优秀" },
                     ],
                     "国内网站": [
                         { name: "B站", url: "https://www.bilibili.com", description: "二次元社区，学习园地" },
@@ -400,65 +405,15 @@
                         { name: "163Mail", url: "https://mail.163.com/", description: "网易163邮箱" },
                         { name: "YahooMail", url: "https://mail.yahoo.com/", description: "雅虎邮箱" },
                     ],  
-                    "辅助工具": [
-                        { name: "FluxGPT", url: "https://flux.urldq.com/", description: "免费图像生成" },
-                        { name: "PixFix", url: "https://zh.pixfix.com/", description: "图片修复·降噪" }, 
-                        { name: "Html.Zone", url: "https://html.zone/background-remover", description: "AI去背景" },
-                        { name: "AzureTTS", url: "https://tts.femoon.top/cn", description: "免费文本转语音2000字" },
-                        { name: "AzureTTS", url: "https://tiktokvoice.net/zh", description: "免费文本转语音300字" },
-                        { name: "文本转语音", url: "https://d1tools.com/tools/ai-tts/", description: "免费文本转语音限IP" },
-                        { name: "图片压缩", url: "https://imgtool.v1.mk/", description: "图片压缩" },
-                        { name: "图片无损放大", url: "https://unlimited.waifu2x.net/", description: "图片无损放大" },
-                        { name: "通义千问", url: "https://tongyi.aliyun.com/", description: "通义千问" },                        
-                    ], 
+                    
                 }
             },
             "在线工具": {
                 subcategories: {
-                    "实用工具": [
-                        { name: "草料二维码", url: "https://cli.im/", description: "全球最大的代码托管平台，开源项目的聚集地" },
-                        { name: "爱资料工具", url: "https://www.toolnb.com/", description: "综合性工具" },
-                        { name: "第一在线工具", url: "https://d1tools.com/tools/", description: "综合工具箱" }, 
-                        { name: "BEJSON", url: "https://www.bejson.com/", description: "格式化工具" }, 
-                        { name: "语雀文档", url: "https://www.yuque.com/", description: "综合文档处理工具" }, 
-                        { name: "ShortURL", url: "https://www.shorturl.at/", description: "短链生成" }, 
-                        { name: "Inboxes", url: "https://inboxes.com/", description: "临时邮箱" }, 
-                        { name: "临时谷歌", url: "https://www.linshiguge.com/", description: "临时谷歌邮箱" },                     
-                    ],
-                    "文件中转": [
-                        { name: "文叔叔", url: "https://www.wenshushu.cn/", description: "文件传输" },
-                        { name: "4275", url: "https://4275.com/", description: "文件中转" }, 
-                        { name: "Send", url: "https://send.vis.ee/", description: "文件中转" }, 
-                        { name: "16图床", url: "https://111666.best/", description: "免费图床" }, 
-                        { name: "Imgdd", url: "https://imgdd.com/", description: "免费图床" }, 
-                        { name: "PostImages", url: "https://postimages.org/", description: "免费图床" }, 
-                        { name: "Helloimg", url: "https://www.helloimg.com/", description: "免费图床" }, 
-                        { name: "Pastebin", url: "https://shz.al/", description: "文本转存" }, 
-                        { name: "igdux", url: "https://igdux.top/", description: "文本转存" }, 
-                        { name: "一块剪贴板", url: "https://ykjtb.com/", description: "网络剪贴板" }, 
-                        { name: "NetCut", url: "https://netcut.cn/", description: "网络剪贴板" }, 
-
-                    ], 
-                    "视频下载": [
-                        { name: "Vtool", url: "https://vtool.pro/", description: "视频下载" },
-                        { name: "Cobalt", url: "https://cobalt.tools/", description: "视频下载" }, 
-                        { name: "Snapany", url: "https://snapany.com/zh", description: "视频下载" }, 
-                        { name: "YouTubeDown", url: "https://yt1d.com/en16/", description: "视频下载" },                         
-                        { name: "Downsub", url: "https://downsub.com/zh/", description: "字幕下载" }, 
-                        { name: "Padansub", url: "https://www.pdsub.com/", description: "熊猫字幕" }, 
-                        { name: "FlowPrompter", url: "https://flowprompter.app/", description: "提词器" }, 
-                        { name: "Shz", url: "https://www.5ce.com/", description: "图文排版" }, 
-                        { name: "igdux", url: "https://www.yikm.net/", description: "在线游戏" }, 
-                        { name: "Croxyproxy", url: "https://www.croxyproxy.com/", description: "代理访问" }, 
-                        { name: "Proxyium", url: "https://www.proxyium.com/", description: "代理访问" }, 
-                        { name: "LumiProxy", url: "https://www.lumiproxy.com/zh-hans/online-proxy/proxysite/", description: "代理访问" }, 
-                        { name: "PayWallBuster", url: "https://paywallbuster.com/", description: "跳过付费墙" }, 
-
-                    ], 
                     "在线工具": [
                         { name: "热榜", url: "https://rebang.today/", description: "看热搜" },
                         { name: "QiReader", url: "https://www.qireader.com/subscriptions", description: "看文章" },
-                        { name: "刘明野", url: "https://tool.liumingye.cn/music/", description: "听音乐" },                         
+                        { name: "刘明野", url: "https://tool.liumingye.cn/music/", description: "听音乐" },
                         { name: "PodLink", url: "https://pod.link/", description: "听播客" },
                         { name: "PodTail", url: "https://podtail.com/podcast/", description: "听播客" }, 
                         { name: "JRKAN", url: "http://www.qiumi1314.com/", description: "看球赛" },
@@ -466,13 +421,72 @@
                         { name: "LatexLive", url: "https://www.latexlive.com/", description: "Latex公式识别" }, 
                         { name: "SimpleTex", url: "https://simpletex.net/", description: "Latex公式识别" }, 
                         { name: "站长之家", url: "https://seo.chinaz.com/", description: "SEO查询" }, 
-                        { name: "itDog", url: "https://www.itdog.cn/ping/", description: "在线PING" },                          
-                        { name: "YiKM", url: "https://www.yikm.net/", description: "在线游戏" },                         
+                        { name: "YiKM", url: "https://www.yikm.net/", description: "在线游戏" },  
                         { name: "FilePurSuit", url: "https://filepursuit.com/", description: "资源搜索" }, 
-                    ]
+                    ],
+                    "在线查询": [
+                        { name: "itDog", url: "https://www.itdog.cn/ping/", description: "在线PING" },
+                        { name: "IP查询", url: "https://ip125.com/", description: "IP查询" },
+                        { name: "IP检测", url: "https://ip.sb/", description: "IP检测" },
+                        { name: "IPInfo", url: "https://ip.sb/", description: "IP信息" },
+                        { name: "Whoer", url: "https://whoer.net/zh", description: "IP纯净度" },
+                        { name: "Fast", url: "https://fast.com/", description: "下载测速" },
+                        { name: "代理检测", url: "https://proxy.incolumitas.com/proxy_detect.html", description: "代理检测" },
+                        { name: "不良林", url: "https://proxy.888005.xyz/", description: "代理检测" },
+                        { name: "SpeedTest", url: "https://speed.cloudflare.com/", description: "外网测速" },
+                        { name: "SpeedTest", url: "https://www.speedtest.net/", description: "国内测速" },
+                    ],
+                    "辅助工具": [
+                        { name: "FluxGPT", url: "https://flux.urldq.com/", description: "免费图像生成" },
+                        { name: "PixFix", url: "https://zh.pixfix.com/", description: "图片修复·降噪" }, 
+                        { name: "Html.Zone", url: "https://html.zone/background-remover", description: "AI去背景" },
+                        { name: "AzureTTS", url: "https://tts.femoon.top/cn", description: "免费文本转语音【2000字】" },
+                        { name: "TikTokVoice", url: "https://tiktokvoice.net/zh", description: "免费文本转语音【限300字】" },
+                        { name: "D1tools", url: "https://d1tools.com/tools/ai-tts/", description: "免费文本转语音【限IP】" },
+                        { name: "ImgTool", url: "https://imgtool.v1.mk/", description: "图片压缩" },
+                        { name: "Waifu2x", url: "https://unlimited.waifu2x.net/", description: "图片无损放大" },
+                        { name: "通义千问", url: "https://tongyi.aliyun.com/", description: "字节跳动旗下AI助手，可不限次文生图" },
+                    ],  
+                    "实用工具": [
+                        { name: "草料二维码", url: "https://cli.im/", description: "二维码生成与解析，可以上传媒体文件" },
+                        { name: "爱资料工具", url: "https://www.toolnb.com/", description: "综合性工具" },
+                        { name: "第一在线工具", url: "https://d1tools.com/tools/", description: "综合工具箱" }, 
+                        { name: "BEJSON", url: "https://www.bejson.com/", description: "格式化工具" }, 
+                        { name: "语雀文档", url: "https://www.yuque.com/", description: "综合文档处理工具" }, 
+                        { name: "ShortURL", url: "https://www.shorturl.at/", description: "短链生成" }, 
+                        { name: "Inboxes", url: "https://inboxes.com/", description: "临时邮箱" }, 
+                        { name: "临时谷歌", url: "https://www.linshiguge.com/", description: "临时谷歌邮箱" },
+                    ],
+                    "文件中转": [
+                        { name: "文叔叔", url: "https://www.wenshushu.cn/", description: "文件传输" },
+                        { name: "4275", url: "https://4275.com/", description: "文件中转" }, 
+                        { name: "Send", url: "https://send.vis.ee/", description: "文件中转" }, 
+                        { name: "16图床", url: "https://111666.best/", description: "免费图床可看历史" }, 
+                        { name: "Imgdd", url: "https://imgdd.com/", description: "免费图床一次性" }, 
+                        { name: "PostImages", url: "https://postimages.org/", description: "免费图床可调尺寸" }, 
+                        { name: "Helloimg", url: "https://www.helloimg.com/", description: "免费图床最大5M一次最多5张" }, 
+                        { name: "Pastebin", url: "https://shz.al/", description: "文本转存" }, 
+                        { name: "igdux", url: "https://igdux.top/", description: "文本转存" }, 
+                        { name: "一块剪贴板", url: "https://ykjtb.com/", description: "网络剪贴板" }, 
+                        { name: "NetCut", url: "https://netcut.cn/", description: "网络剪贴板可加密" }, 
+                    ], 
+                    "视频下载": [
+                        { name: "Vtool", url: "https://vtool.pro/", description: "视频下载" },
+                        { name: "Cobalt", url: "https://cobalt.tools/", description: "视频下载" }, 
+                        { name: "Snapany", url: "https://snapany.com/zh", description: "视频下载" }, 
+                        { name: "YouTubeDown", url: "https://yt1d.com/en16/", description: "视频下载" },
+                        { name: "Downsub", url: "https://downsub.com/zh/", description: "字幕下载" }, 
+                        { name: "Pandasub", url: "https://www.pdsub.com/", description: "熊猫字幕" }, 
+                        { name: "FlowPrompter", url: "https://flowprompter.app/", description: "提词器" }, 
+                        { name: "Shz", url: "https://www.5ce.com/", description: "图文排版" },  
+                        { name: "Croxyproxy", url: "https://www.croxyproxy.com/", description: "代理访问" }, 
+                        { name: "Proxyium", url: "https://www.proxyium.com/", description: "代理访问" }, 
+                        { name: "LumiProxy", url: "https://www.lumiproxy.com/zh-hans/online-proxy/proxysite/", description: "代理访问" }, 
+                        { name: "PayWallBuster", url: "https://paywallbuster.com/", description: "跳过付费墙" }, 
+                    ], 
                 }
             },
-            "开发工具": {
+            "开发设计": {
                 subcategories: {
                     "代码托管": [
                         { name: "GitHub", url: "https://github.com", description: "全球最大的代码托管平台，开源项目的聚集地" },
@@ -489,7 +503,7 @@
                         { name: "草啦SSL", url: "https://cao.la/", description: "免费制作SSL证书" }, 
                         { name: "SSL证书", url: "https://letsencrypt.osfipin.com/", description: "免费制作SSL证书" }, 
                     ],
-                    "学习教程": [
+                    "编程教程": [
                         { name: "博客园", url: "https://www.cnblogs.com/", description: "开发者的网上家园" },
                         { name: "阿里云", url: "https://www.aliyun.com/", description: "计算，为了无法计算的价值" }, 
                         { name: "开源中国", url: "https://www.oschina.net/", description: "中文开源技术交流社区" }, 
@@ -505,11 +519,7 @@
                         { name: "LayUI", url: "https://layui.dev/", description: "极简模块化前端UI组件库" },
                         { name: "JavaDoc", url: "https://docs.oracle.com/", description: "Java说明文档" },
                     ],
-                }
-            },
-            "设计工具": {
-                subcategories: {
-                    "代码托管": [
+                    "付费设计": [
                         { name: "Canvas", url: "https://www.canva.cn/", description: "全球最大的代码托管平台，开源项目的聚集地" },
                         { name: "Designevo", url: "https://www.designevo.com/", description: "提供完整的DevOps平台，支持私有部署" }, 
                     ],
@@ -524,33 +534,49 @@
                         { name: "free-font", url: "https://wangchujiang.com/free-font/", description: "配色" }, 
                         { name: "IconFont", url: "https://www.iconfont.cn/", description: "阿里巴巴矢量图标库" },
                         { name: "YesIcon", url: "https://yesicon.app/", description: "开源、免费的矢量图标库" }, 
-                        { name: "MingCute", url: "https://www.mingcute.com/", description: "精心设计的图标库" },                       
-                    ]
+                        { name: "MingCute", url: "https://www.mingcute.com/", description: "精心设计的图标库" },
+                    ], 
                 }
             },
-            "素材集市": {
+
+            "网盘素材": {
                 subcategories: {
-                    "设计素材": [
+                    "在线网盘": [
+                        { name: "阿里云盘", url: "https://www.alipan.com/", description: "阿里云盘" },
+                        { name: "夸克网盘", url: "https://pan.quark.cn/", description: "夸克网盘" }, 
+                        { name: "百度网盘", url: "https://pan.baidu.com/", description: "百度网盘" },
+                        { name: "123盘", url: "https://www.123pan.com/", description: "123盘【不限速】" }, 
+                        { name: "飞机盘", url: "https://www.feijipan.com", description: "小飞机【不限速】" }, 
+                        { name: "蓝奏云", url: "https://up.woozooo.com/mydisk.php/", description: "蓝奏云【不限速，限100M，限格式】" },
+                        { name: "坚果云", url: "https://www.jianguoyun.com/", description: "坚果云【仅1G，可DAV】" },
+                        { name: "OneNote", url: "https://www.onenote.com/", description: "OneNote【网页版无法正常使用】" },
+                        { name: "金山文档", url: "https://www.kdocs.cn/", description: "金山办公WPS云稳定" }, 
+                        { name: "腾讯文档", url: "https://docs.qq.com/", description: "腾讯办公在线文档" },
+                        { name: "钉钉文档", url: "https://docs.dingtalk.com/", description: "钉钉办公文档" }, 
+                        { name: "飞书文档", url: "https://www.feishu.cn/", description: "字节文档有限制" },
+                    ],
+                    "其它材料": [
                         { name: "爱给网", url: "https://www.aigei.com/", description: "【综合】音效配乐_3D模型_视频素材_免费下载" },
                         { name: "找台词", url: "https://zhaotaici.cn/", description: "根据文本寻找影视剧集中出现的场景" }, 
                         { name: "LookAE", url: "https://www.lookae.com/", description: "大众脸影视后期特效" },
                         { name: "优品PPT", url: "https://www.ypppt.com/", description: "精美免费PPT模板下载" }, 
-                        { name: "懒人Excel", url: "https://www.lanrenexcel.com/", description: "Excel函数公式、操作技巧、数据分析图表模板、VBA、数据透视表教程" },
-                        { name: "SocialBeta", url: "https://socialbeta.com/", description: "【营销】专注品牌营销实践和趋势研究" }, 
+                        { name: "懒人Excel", url: "https://www.lanrenexcel.com/", description: "Excel函数公式、操作技巧、数据分析图表模板、VBA、数据透视表教程" }, 
+                        { name: "音效网", url: "https://www.yisell.com/", description: "【音效】老牌音效网站不可商用" },
+                        { name: "小森平音效", url: "https://taira-komori.jpn.org/freesoundtw.html", description: "【音效】1800种免费音效" }, 
+                        { name: "淘声", url: "https://www.tosound.com/search", description: "【音效】从各大网站搜索你想要的场景音" },                        
+                    ],
+                    "阅读材料": [
                         { name: "ReadPaper", url: "https://readpaper.com/", description: "【期刊】论文期刊阅读" },
                         { name: "范文先生", url: "https://www.fwsir.com/", description: "【范文】很全面的范文参考网站" }, 
                         { name: "过期杂志", url: "https://www.fx361.com/", description: "【期刊】看期刊的网站" },
+                        { name: "SocialBeta", url: "https://socialbeta.com/", description: "【营销】专注品牌营销实践和趋势研究" }, 
                         { name: "数英网", url: "https://www.digitaling.com/", description: "【营销】数字媒体及职业招聘网站" }, 
                         { name: "梅花网", url: "http://www.meihua.info/", description: "【营销】营销案例网站" },
                         { name: "即能创新", url: "https://runwise.co/", description: "【创新】创意设计师社区" }, 
-                        { name: "前瞻网", url: "https://www.qianzhan.com/", description: "【研究】发现趋势预见未来" },                       
-                        { name: "发现报告", url: "https://www.fxbaogao.com/", description: "【研究】优秀设计作品分享平台" }, 
+                        { name: "前瞻网", url: "https://www.qianzhan.com/", description: "【研究】发现趋势预见未来" },
+                        { name: "发现报告", url: "https://www.fxbaogao.com/", description: "【研究】专业研报平台丨收录海量行业报告、券商研报" }, 
                         { name: "艾瑞咨询", url: "https://www.iresearch.com.cn/", description: "【研究】互联网数据资讯聚合平台" },
-                        { name: "比达咨询", url: "http://www.bigdata-research.cn/", description: "【研究】专注移动互联网行业的市场研究和数据交流平台" }, 
-                        { name: "音效网", url: "https://www.yisell.com/", description: "【音效】优秀设计作品分享平台" },
-                        { name: "小森平音效", url: "https://taira-komori.jpn.org/freesoundtw.html", description: "【音效】1800种免费音效" }, 
-                        { name: "淘声", url: "https://www.tosound.com/search", description: "【音效】从各大网站搜索你想要的场景音" },
-                        
+                        { name: "比达咨询", url: "http://www.bigdata-research.cn/", description: "【研究】专注移动互联网行业的市场研究和数据交流平台" },                        
                     ],
                     "免费壁纸": [
                         { name: "刘明野的壁纸库", url: "https://tool.liumingye.cn/wallpaper/", description: "刘明野的壁纸库" }, 
@@ -558,27 +584,7 @@
                         { name: "免费壁纸", url: "https://wallspic.com/cn", description: "免费壁纸" }, 
                         { name: "壁纸汇", url: "https://www.bizhihui.com/", description: "手机·电脑免费壁纸" }, 
                         { name: "拾光壁纸", url: "https://snake.timeline.ink/random", description: "干净、舒适、流畅的壁纸应用" }, 
-                    ]
-                }
-            }, 
-            "网盘资源": {
-                subcategories: {
-                    "在线网盘": [
-                        { name: "阿里云盘", url: "https://www.alipan.com/", description: "优秀设计作品分享平台" },
-                        { name: "夸克网盘", url: "https://pan.quark.cn/", description: "创意设计师社区" }, 
-                        { name: "百度网盘", url: "https://pan.baidu.com/", description: "优秀设计作品分享平台" },
-                        { name: "123盘", url: "https://www.123pan.com/", description: "创意设计师社区" }, 
-                        { name: "飞机盘", url: "https://www.feijipan.com", description: "创意设计师社区" }, 
-                        { name: "蓝奏云", url: "https://up.woozooo.com/mydisk.php/", description: "优秀设计作品分享平台" },
-                        { name: "坚果云", url: "https://www.jianguoyun.com/", description: "优秀设计作品分享平台" },
-                        { name: "OneNote", url: "https://www.onenote.com/", description: "优秀设计作品分享平台" },
-                    ],
-                    "在线文档": [
-                        { name: "金山文档", url: "https://www.kdocs.cn/", description: "创意设计师社区" }, 
-                        { name: "腾讯文档", url: "https://docs.qq.com/", description: "优秀设计作品分享平台" },
-                        { name: "钉钉文档", url: "https://docs.dingtalk.com/", description: "创意设计师社区" }, 
-                        { name: "OneNote", url: "https://www.onenote.com/", description: "优秀设计作品分享平台" },
-                    ],
+                    ], 
                 }
             }, 
             "导航站点": {
@@ -605,10 +611,6 @@
                         { name: "423Down", url: "https://423down.com/", description: "更新快、专注去广告类软件输出10年、个人IP品牌软件分享站." },
                         { name: "UptoDown", url: "https://www.uptodown.com/", description: "全球最大的软件下载站" },
                     ],
-                }
-            }, 
-            "其它网站": {
-                subcategories: {
                     "官方网站": [
                         { name: "学信网", url: "https://www.chsi.com.cn/", description: "学信网" },
                         { name: "教资网", url: "https://sso1.jszg.edu.cn/", description: "教资网" }, 
@@ -642,9 +644,9 @@
                         { name: "杂铺网盘", url: "https://pan.tmioe.com/", description: "杂铺的自建网盘，有一些软件存放在这里" },
                         { name: "电视直播软件", url: "https://www.iptvkk.com/livetv/", description: "电视直播软件" }, 
                         { name: "直播源搜索", url: "http://tonkiang.us/", description: "直播源搜索" },  
-                    ],                    
+                    ],
                 }
-            },   
+            }, 
         };
 
         function initializePage() {
